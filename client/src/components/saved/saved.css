@@ -1,0 +1,88 @@
+ .saved_container {
+     background-color: #0F0F0F;
+     position: relative;
+     width: 100%;
+     max-width: 800px;
+     height: 100%;
+     min-height: 300px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     border-radius: 10px;
+ }
+ .saved_header{
+    position: relative;
+  padding: 25px;
+  height: 40%;
+  
+  
+ }
+
+ .saved_poster{
+    position: relative;
+  float: left;
+  margin-right: 20px;
+  border-radius: 5px;
+  height: 120px;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+ }
+
+ .saved_name{
+    position: relative;
+    top: -50px;
+    font-size: 2rem;
+ }
+ .saved_year{
+    position: relative;
+    top: -25px;
+    color: #9ac7fa;
+  font-weight: 400;
+ }
+
+ .minutes{
+    position: absolute;
+    bottom: -60px;
+        left: 75px;
+        display: inline-block;
+        margin-top: 10px;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(255,255,255,0.13);
+      }
+      .type{
+        position: absolute;
+        right: 75px;
+    bottom: -53px;
+        display: inline-block;
+        color: #cee4fd;
+        margin-left: 10px;
+      }
+      .saved_desc{
+        position: relative;
+        top: -10px;
+        font-size: 1rem;
+      }
+
+      .saved_btn_grp{
+        height: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .saved_btn{
+        font-size: 1rem;
+        font-weight: 500;
+        height: 35px;
+        width: 100px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      .saved_btn:hover{
+        background-color: #fff;
+        color: #000;
+      }

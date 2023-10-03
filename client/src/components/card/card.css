@@ -1,0 +1,226 @@
+/* Variables */
+:root {
+  --orange: #f15826;
+  --blue: #00bcd4;
+  --yellow: #ffc807;
+  --transition: all 0.3s ease;
+  --cardWidth: 460px;
+  --cardHeight: 40vh;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: Inter;
+}
+
+.limitText{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.card {
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  transition: var(--transition);
+  transform: scale(0.95);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.03);
+}
+
+.card__image {
+  position: absolute;
+  /* background-image: url(https://asiasociety.org/sites/default/files/styles/1200w/public/2019-10/Parasite.jpg); */
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  transition: var(--transition);
+}
+
+.card__image:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  transition: var(--transition);
+  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.card__player {
+  opacity: 0;
+  height: 280px;
+  width: 100%;
+  position: relative;
+  pointer-events: none;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.playerCard {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.card__info {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.3s ease;
+  color: white;
+  transform: translateY(188px);
+}
+
+.card__info .title {
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 0.4rem;
+  padding-left: 10px;
+  z-index: 200;
+  transition: var(--transition);
+}
+
+.card__info .title:after {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 10px;
+  width: 60px;
+  height: 3px;
+  background: var(--blue);
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.card__info .genre {
+  color: #b3b7b9;
+  margin-top: 0.4rem;
+  padding-left: 10px;
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.card__info .desc {
+  background: #242424;
+  margin-top: 10px;
+  color: #78848e;
+  padding: 20px 20px;
+  font-size: 15px;
+  transition: var(--transition);
+  transform: translateY(20px);
+}
+
+.card__info .desc p {
+  line-height: 1.3;
+}
+
+.card__info .rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__info .rating .meta {
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.card__info .rating i {
+  width: 0.8em;
+  transform: translateY(-3px);
+}
+
+.card__info .rating i:last-child {
+  color: #e0e0e0;
+}
+
+
+
+.card__info .button {
+  background: red;
+  width: 100%;
+  text-align: center;
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  transition: var(--transition);
+  color: white;
+  font-size: 15px;
+}
+
+
+
+.card__info {
+  background: lighten(var(--blue), 4%);
+}
+
+.button:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 12px 22px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 12px 22px rgba(0, 0, 0, 0.15);
+  transform: scale(1);
+}
+
+.card:hover .card__image {
+  transform: translateY(-140px);
+}
+
+.card:hover .card__info {
+  transform: translateY(0);
+}
+
+.card:hover .genre {
+  opacity: 0;
+}
+
+.card:hover .title {
+  padding-bottom: 10px;
+  transform: translateY(33px) translateX(10px);
+}
+
+.card:hover .title:after {
+  opacity: 0;
+}
+
+.card:hover .desc {
+  transform: translateY(1px);
+}
+
+.card.--active .card__image {
+  transform: translateY(-100px) scale(1.4);
+}
+
+.card.--active .card__player {
+  opacity: 1;
+}
+
+.card.--active .card__info .title:after {
+  transition: all 0.2s ease;
+  width: calc(100% + 10px);
+}
+
+.btn {
+  display: flex;
+}
