@@ -8,3 +8,40 @@
     margin-top: 5rem;
     justify-content: center;
 }
+
+.profile_user{
+    display: flex;
+    height: 20rem;
+    border: 1px solid #ccc;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profile_header{
+    margin-top: 2rem;
+}
+.profile_icon{
+    width: 100px;
+}
+
+.profile_subheading{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.profilelogoutbtn {
+  background: #fff;
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  width: 120px;
+  cursor: pointer;
+}
+
+.profilelogoutbtn span {
+  display: inline-block;
+  color: black;
+}

@@ -53,7 +53,7 @@ function TvDetail() {
 				<div className="movie__detailRight">
 					<div className="movie__detailRightTop">
 						<div className="movie__name">
-							{currentTvDetail ? currentTvDetail.original_title : ""}
+							{currentTvDetail ? currentTvDetail.name : ""}
 						</div>
 						<div className="movie__tagline">
 							{currentTvDetail ? currentTvDetail.tagline : ""}
@@ -74,7 +74,7 @@ function TvDetail() {
 						<div className="movie__releaseDate">
 							{currentTvDetail
 								? "Next episode : " +
-								formatDate(currentTvDetail.next_episode_to_air.air_date)
+								formatDate(currentTvDetail.last_air_date)
 								: ""}
 						</div>
 						<div className="movie__genres">

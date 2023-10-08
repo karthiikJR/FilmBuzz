@@ -76,8 +76,7 @@ router.post("/remove", async (req, res) => {
 });
 
 router.get("/getUserDetails", async (req, res) => {
-	const { userId } = req.body; // Replace with the actual user ID you want to fetch
-
+	const userId  = req.query.userId; 
 	try {
 		// Find the user with the specified userId
 		const user = await SavedModel.findOne({ userId });

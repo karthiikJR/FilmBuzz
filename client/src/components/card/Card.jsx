@@ -50,11 +50,25 @@ function Card({ url, title, genre, description, rating, id, media_type }) {
 	const [cookies] = useCookies(["access_token"]);
 	const userId = window.localStorage.getItem("userID");
 	const med = media_type === "movie" ? "movie" : "tv";
-	const [_, setUserDetails] = useState({
+	const [userDetails, setUserDetails] = useState({
 		movies: [],
 		tvShows: [],
 	});
-	let flag = false;
+
+	useEffect(() => {
+		const fetchDataForUser = async () => {
+			try {
+				const response = await axios.get(
+					`http://localhost:3001/getUserDetails?userId=${userId}`
+				);
+				setUserDetails(response.data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+
+		fetchDataForUser();
+	}, [userDetails]);
 
 	function limitText(text, limit) {
 		if (text.length > limit) {
@@ -141,6 +155,7 @@ function Card({ url, title, genre, description, rating, id, media_type }) {
 			});
 		}
 	};
+
 
 	const divStyle = generateDivStyle(url);
 	const heartIcons = generateHeartIcons(rating);
