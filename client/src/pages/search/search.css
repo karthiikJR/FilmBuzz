@@ -3,7 +3,7 @@
     margin-top: 10%;
 }
 
-.container{
+.container_search{
     display: flex;
     flex-wrap: wrap;
 }

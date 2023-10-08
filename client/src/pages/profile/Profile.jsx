@@ -5,11 +5,14 @@ import Saved from "../../components/saved/Saved";
 import axios from "axios";
 import { circle_user } from "../../assets";
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
 	const API = import.meta.env.VITE_TMDB_API_KEY;
 	const [userDetails, setUserDetails] = useState({});
 	const [mediaData, setMediaData] = useState([]);
+	const [, setCookies] = useCookies(["access_token"]);
+	const navigate = useNavigate();
 	
 	const userId = window.localStorage.getItem("userID");
 
@@ -70,8 +73,16 @@ function Profile() {
 			<div className="profile_user">
 				<h1 className="profile_header">Hello User!</h1>
 				<img src={circle_user} alt="USER" className="profile_icon" />
-				<button className="profilelogoutbtn">
-					<span >LOGOUT</span>
+				<button
+					className="profilelogoutbtn"
+					onClick={() => {
+						console.log("ok");
+						setCookies("access_token", "");
+						window.localStorage.removeItem("userID");
+						navigate("/");
+					}}
+				>
+					<span>LOGOUT</span>
 				</button>
 			</div>
 			<h2 className="profile_subheading">

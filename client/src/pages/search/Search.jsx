@@ -29,7 +29,7 @@ function Search() {
 	return (
 		<>
 			<h1 className="heading">Search results</h1>
-			<div className="container">
+			<div className="container_search">
 				{searchContent.map((movie) => (
 					<Card
 						key={movie.id}
